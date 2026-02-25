@@ -8,6 +8,7 @@ import "package:inventree/l10.dart";
 
 import "package:inventree/settings/about.dart";
 import "package:inventree/settings/app_settings.dart";
+import "package:inventree/settings/ai_settings.dart";
 import "package:inventree/settings/barcode_settings.dart";
 import "package:inventree/settings/home_settings.dart";
 import "package:inventree/settings/select_server.dart";
@@ -102,6 +103,20 @@ class _InvenTreeSettingsState extends State<InvenTreeSettingsWidget> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => InvenTreeBarcodeSettingsWidget(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: Text("AI Settings"),
+              subtitle: Text("Configure AI image analysis"),
+              leading: Icon(TablerIcons.robot, color: COLOR_ACTION),
+              trailing: LinkIcon(),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => InvenTreeAISettingsWidget(),
                   ),
                 );
               },

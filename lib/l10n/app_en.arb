@@ -1810,5 +1810,383 @@
   "@currency": {},
 
   "priceBreaks": "Price Breaks",
-  "@priceBreaks": {}
+  "@priceBreaks": {},
+
+  "aiSettings": "AI Settings",
+  "@aiSettings": {},
+
+  "aiShowFeatures": "Show AI Features",
+  "@aiShowFeatures": {},
+
+  "aiShowFeaturesDetail": "Show AI buttons in parts and stock views",
+  "@aiShowFeaturesDetail": {},
+
+  "aiEnable": "Enable AI",
+  "@aiEnable": {},
+
+  "aiEnableDetail": "Enable AI image analysis",
+  "@aiEnableDetail": {},
+
+  "aiProvider": "AI Provider",
+  "@aiProvider": {},
+
+  "aiProviderClaude": "Claude (Anthropic)",
+  "@aiProviderClaude": {},
+
+  "aiProviderClaudeDetail": "Multimodal AI by Anthropic",
+  "@aiProviderClaudeDetail": {},
+
+  "aiProviderGemini": "Gemini (Google)",
+  "@aiProviderGemini": {},
+
+  "aiProviderGeminiDetail": "Multimodal AI by Google",
+  "@aiProviderGeminiDetail": {},
+
+  "aiProviderOpenAI": "OpenAI",
+  "@aiProviderOpenAI": {},
+
+  "aiProviderOpenAIDetail": "Multimodal AI by OpenAI",
+  "@aiProviderOpenAIDetail": {},
+
+  "aiApiKey": "API Key",
+  "@aiApiKey": {},
+
+  "aiApiKeyEnter": "Enter your API key",
+  "@aiApiKeyEnter": {},
+
+  "aiApiKeyNotSet": "Not set",
+  "@aiApiKeyNotSet": {},
+
+  "aiModel": "Model",
+  "@aiModel": {},
+
+  "aiModelDefaultLabel": "Default ({model})",
+  "@aiModelDefaultLabel": {
+    "placeholders": {
+      "model": {
+        "type": "String"
+      }
+    }
+  },
+
+  "aiModelSelectFirst": "Set an API key first",
+  "@aiModelSelectFirst": {},
+
+  "aiModelSelect": "Select Model",
+  "@aiModelSelect": {},
+
+  "aiModelNoResults": "No models returned from API",
+  "@aiModelNoResults": {},
+
+  "aiModelRecommendedVision": "Recommended for vision",
+  "@aiModelRecommendedVision": {},
+
+  "aiModelLoadFailed": "Failed to load models",
+  "@aiModelLoadFailed": {},
+
+  "aiForceInjectTag": "Force Inject Tag",
+  "@aiForceInjectTag": {},
+
+  "aiForceInjectTagHint": "e.g. system:ai",
+  "@aiForceInjectTagHint": {},
+
+  "aiTestConnection": "Test Connection",
+  "@aiTestConnection": {},
+
+  "aiTestConnectionDetail": "Verify AI service connectivity",
+  "@aiTestConnectionDetail": {},
+
+  "aiConnectionSuccess": "Connection successful!",
+  "@aiConnectionSuccess": {},
+
+  "aiConnectionFailed": "Connection failed",
+  "@aiConnectionFailed": {},
+
+  "aiNotConfigured": "AI is not configured. Enable AI and set an API key.",
+  "@aiNotConfigured": {},
+
+  "aiParts": "AI Parts",
+  "@aiParts": {},
+
+  "aiPartsTakePhoto": "Take a photo to start",
+  "@aiPartsTakePhoto": {},
+
+  "aiClearAll": "Clear all",
+  "@aiClearAll": {},
+
+  "aiToggleFlash": "Toggle flash",
+  "@aiToggleFlash": {},
+
+  "aiNoCameras": "No cameras available",
+  "@aiNoCameras": {},
+
+  "aiCameraInitFailed": "Failed to initialize camera",
+  "@aiCameraInitFailed": {},
+
+  "aiTakePictureFailed": "Failed to take picture",
+  "@aiTakePictureFailed": {},
+
+  "aiQueued": "Queued...",
+  "@aiQueued": {},
+
+  "aiAnalyzing": "Analyzing...",
+  "@aiAnalyzing": {},
+
+  "aiAnalysisFailed": "Analysis failed",
+  "@aiAnalysisFailed": {},
+
+  "aiAnalysisComplete": "Analysis complete",
+  "@aiAnalysisComplete": {},
+
+  "aiServiceNotConfigured": "AI service not configured. Check AI settings.",
+  "@aiServiceNotConfigured": {},
+
+  "aiEditPart": "Edit Part",
+  "@aiEditPart": {},
+
+  "aiReanalyze": "Re-analyze",
+  "@aiReanalyze": {},
+
+  "aiSubmit": "Submit",
+  "@aiSubmit": {},
+
+  "aiSavePart": "Save Part",
+  "@aiSavePart": {},
+
+  "aiSelectCategory": "Select Category",
+  "@aiSelectCategory": {},
+
+  "aiPartCreated": "Part created",
+  "@aiPartCreated": {},
+
+  "aiPartCreatedSuccess": "Part created successfully",
+  "@aiPartCreatedSuccess": {},
+
+  "aiPartUpdated": "Part updated successfully",
+  "@aiPartUpdated": {},
+
+  "aiPartCreateFailed": "Failed to create part",
+  "@aiPartCreateFailed": {},
+
+  "aiPartUpdateFailed": "Failed to update part",
+  "@aiPartUpdateFailed": {},
+
+  "aiReanalysisFailed": "Re-analysis failed",
+  "@aiReanalysisFailed": {},
+
+  "aiCheckingDuplicates": "Checking for duplicates...",
+  "@aiCheckingDuplicates": {},
+
+  "aiPossibleDuplicates": "Possible duplicates found",
+  "@aiPossibleDuplicates": {},
+
+  "aiViewPart": "View part",
+  "@aiViewPart": {},
+
+  "aiUpdateThisPart": "Update this part",
+  "@aiUpdateThisPart": {},
+
+  "aiInitialStock": "Initial Stock",
+  "@aiInitialStock": {},
+
+  "aiAddManufacturer": "Add manufacturer",
+  "@aiAddManufacturer": {},
+
+  "aiAddSupplier": "Add supplier",
+  "@aiAddSupplier": {},
+
+  "aiSearchingManufacturers": "Searching manufacturers...",
+  "@aiSearchingManufacturers": {},
+
+  "aiSearchingSuppliers": "Searching suppliers...",
+  "@aiSearchingSuppliers": {},
+
+  "aiNoMatchingManufacturers": "No matching manufacturers found",
+  "@aiNoMatchingManufacturers": {},
+
+  "aiNoMatchingSuppliers": "No matching suppliers found",
+  "@aiNoMatchingSuppliers": {},
+
+  "aiCreateCompanyAs": "Create \"{name}\" as {role}",
+  "@aiCreateCompanyAs": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "role": {
+        "type": "String"
+      }
+    }
+  },
+
+  "aiCompanyCreated": "Company created",
+  "@aiCompanyCreated": {},
+
+  "aiCompanyCreateFailed": "Failed to create company",
+  "@aiCompanyCreateFailed": {},
+
+  "aiCreatingCompany": "Creating company...",
+  "@aiCreatingCompany": {},
+
+  "aiManufacturerPartCreateFailed": "Failed to create manufacturer part",
+  "@aiManufacturerPartCreateFailed": {},
+
+  "aiSupplierPartCreateFailed": "Failed to create supplier part",
+  "@aiSupplierPartCreateFailed": {},
+
+  "aiInitialStockFailed": "Failed to create initial stock",
+  "@aiInitialStockFailed": {},
+
+  "aiPartName": "Name *",
+  "@aiPartName": {},
+
+  "aiPartNameHint": "Part name",
+  "@aiPartNameHint": {},
+
+  "aiPartDescription": "Description *",
+  "@aiPartDescription": {},
+
+  "aiPartDescriptionHint": "Part description",
+  "@aiPartDescriptionHint": {},
+
+  "aiIpn": "IPN",
+  "@aiIpn": {},
+
+  "aiIpnHint": "Internal Part Number",
+  "@aiIpnHint": {},
+
+  "aiKeywordsHint": "Search keywords",
+  "@aiKeywordsHint": {},
+
+  "aiClearKeywords": "Clear keywords",
+  "@aiClearKeywords": {},
+
+  "aiMpn": "MPN",
+  "@aiMpn": {},
+
+  "aiMpnHint": "Manufacturer Part Number",
+  "@aiMpnHint": {},
+
+  "aiSpn": "SKU",
+  "@aiSpn": {},
+
+  "aiSpnHint": "Supplier Part Number",
+  "@aiSpnHint": {},
+
+  "aiActive": "Active",
+  "@aiActive": {},
+
+  "aiComponent": "Component",
+  "@aiComponent": {},
+
+  "aiComponentDetail": "Can be used in assemblies",
+  "@aiComponentDetail": {},
+
+  "aiPurchaseable": "Purchaseable",
+  "@aiPurchaseable": {},
+
+  "aiPurchaseableDetail": "Can be purchased from suppliers",
+  "@aiPurchaseableDetail": {},
+
+  "aiSalable": "Salable",
+  "@aiSalable": {},
+
+  "aiSalableDetail": "Can be sold to customers",
+  "@aiSalableDetail": {},
+
+  "aiTrackable": "Trackable",
+  "@aiTrackable": {},
+
+  "aiTrackableDetail": "Track individual items by serial number",
+  "@aiTrackableDetail": {},
+
+  "aiConfidence": "Confidence",
+  "@aiConfidence": {},
+
+  "aiConfidencePercent": "{percent}% confidence",
+  "@aiConfidencePercent": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+
+  "aiStockCount": "AI Stock Count",
+  "@aiStockCount": {},
+
+  "aiStockTakePhoto": "Take a photo to count items",
+  "@aiStockTakePhoto": {},
+
+  "aiStockCounting": "Counting items...",
+  "@aiStockCounting": {},
+
+  "aiStockUpdated": "Stock updated",
+  "@aiStockUpdated": {},
+
+  "aiStockUpdateFailed": "Failed to update stock",
+  "@aiStockUpdateFailed": {},
+
+  "aiStockAdjustCount": "Adjust count",
+  "@aiStockAdjustCount": {},
+
+  "aiStockReset": "Reset",
+  "@aiStockReset": {},
+
+  "aiStockItemsCounted": "items counted",
+  "@aiStockItemsCounted": {},
+
+  "aiConfidenceHigh": "High",
+  "@aiConfidenceHigh": {},
+
+  "aiConfidenceMedium": "Medium",
+  "@aiConfidenceMedium": {},
+
+  "aiConfidenceLow": "Low",
+  "@aiConfidenceLow": {},
+
+  "aiConfidenceLabel": "{level} confidence",
+  "@aiConfidenceLabel": {
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+
+  "aiCurrentStock": "Current stock: {quantity}",
+  "@aiCurrentStock": {
+    "placeholders": {
+      "quantity": {
+        "type": "String"
+      }
+    }
+  },
+
+  "aiRetry": "Retry",
+  "@aiRetry": {},
+
+  "aiImageAnalysisFailed": "Failed to analyze image",
+  "@aiImageAnalysisFailed": {},
+
+  "aiNoCategory": "No category",
+  "@aiNoCategory": {},
+
+  "aiResetTo": "Reset to {count}",
+  "@aiResetTo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+
+  "aiUnknown": "Unknown",
+  "@aiUnknown": {},
+
+  "aiUnknownError": "Unknown error",
+  "@aiUnknownError": {},
+
+  "aiNone": "None",
+  "@aiNone": {}
 }

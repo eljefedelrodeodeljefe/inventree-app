@@ -72,6 +72,8 @@ flutter:
     - assets/sounds/barcode_scan.mp3
     - assets/sounds/barcode_error.mp3
     - assets/sounds/server_error.mp3
+    - test/fixtures/ai_parts/
+    - test/fixtures/ai_stock/
 
 sentry:
   upload_debug_symbols: true

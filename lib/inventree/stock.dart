@@ -518,7 +518,7 @@ class InvenTreeStockItem extends InvenTreeModel {
 
     data = {
       "items": [
-        {"pk": "${pk}", "quantity": "${quantity}"},
+        {"pk": "${pk}", "quantity": "${q}"},
       ],
       "notes": notes ?? "",
     };

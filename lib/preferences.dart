@@ -62,6 +62,28 @@ const String INV_BARCODE_SCAN_SINGLE = "barcodeScanSingle";
 const int BARCODE_CONTROLLER_CAMERA = 0;
 const int BARCODE_CONTROLLER_WEDGE = 1;
 
+// AI settings
+const String INV_AI_SHOW_FEATURES = "aiShowFeatures";
+const String INV_AI_ENABLED = "aiEnabled";
+const String INV_AI_PROVIDER = "aiProvider";
+const String INV_AI_API_KEY = "aiApiKey"; // Legacy shared key
+const String INV_AI_MODEL = "aiModel"; // Legacy shared key
+const String INV_AI_FORCE_TAG = "aiForceTag";
+const String INV_AI_FORCE_TAG_DEFAULT = "system:ai";
+
+// Per-provider AI keys
+const String INV_AI_CLAUDE_API_KEY = "aiClaudeApiKey";
+const String INV_AI_CLAUDE_MODEL = "aiClaudeModel";
+const String INV_AI_GEMINI_API_KEY = "aiGeminiApiKey";
+const String INV_AI_GEMINI_MODEL = "aiGeminiModel";
+const String INV_AI_OPENAI_API_KEY = "aiOpenaiApiKey";
+const String INV_AI_OPENAI_MODEL = "aiOpenaiModel";
+
+// AI provider types
+const int AI_PROVIDER_CLAUDE = 0;
+const int AI_PROVIDER_GEMINI = 1;
+const int AI_PROVIDER_OPENAI = 2;
+
 /*
  * Class for storing InvenTree preferences in a NoSql DB
  */
