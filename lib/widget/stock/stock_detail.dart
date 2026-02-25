@@ -25,6 +25,7 @@ import "package:inventree/widget/link_icon.dart";
 import "package:inventree/widget/progress.dart";
 import "package:inventree/widget/refreshable_state.dart";
 import "package:inventree/widget/snacks.dart";
+import "package:inventree/widget/stock/ai_stock_screen.dart";
 import "package:inventree/widget/stock/stock_item_history.dart";
 import "package:inventree/widget/stock/stock_item_test_results.dart";
 import "package:inventree/widget/notes_widget.dart";
@@ -117,6 +118,37 @@ class _StockItemDisplayState extends RefreshableState<StockDetailWidget> {
         );
       }
 
+      if (_aiShowFeatures && !widget.item.isSerialized()) {
+        actions.add(
+          SpeedDialChild(
+            child: Icon(
+              TablerIcons.robot,
+              color: _aiConfigured ? COLOR_ACTION : Colors.grey,
+            ),
+            label: "AI Stock",
+            labelStyle: _aiConfigured ? null : TextStyle(color: Colors.grey),
+            onTap: _aiConfigured
+                ? () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            AIStockScreen(stockItem: widget.item),
+                      ),
+                    ).then((_) {
+                      refresh(context);
+                    });
+                  }
+                : () {
+                    showSnackIcon(
+                      "Configure AI API key in settings first",
+                      success: false,
+                    );
+                  },
+          ),
+        );
+      }
+
       // Transfer item
       actions.add(
         SpeedDialChild(
@@ -192,6 +224,8 @@ class _StockItemDisplayState extends RefreshableState<StockDetailWidget> {
   }
 
   bool allowLabelPrinting = false;
+  bool _aiShowFeatures = false;
+  bool _aiConfigured = false;
   int attachmentCount = 0;
 
   @override
@@ -211,6 +245,14 @@ class _StockItemDisplayState extends RefreshableState<StockDetailWidget> {
     stockShowTests =
         await InvenTreeSettingsManager().getValue(INV_STOCK_SHOW_TESTS, true)
             as bool;
+
+    _aiShowFeatures = await InvenTreeSettingsManager().getBool(
+      INV_AI_SHOW_FEATURES,
+      true,
+    );
+    final String _aiApiKey =
+        await InvenTreeSettingsManager().getValue(INV_AI_API_KEY, "") as String;
+    _aiConfigured = _aiApiKey.isNotEmpty;
 
     final bool result = widget.item.pk > 0 && await widget.item.reload();
 

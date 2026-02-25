@@ -75,7 +75,7 @@ void showSnackIcon(
                 onAction();
               },
             ),
-      duration: Duration(seconds: onAction == null ? 5 : 10),
+      duration: Duration(seconds: onAction == null ? 2 : 5),
     ),
   );
 }

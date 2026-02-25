@@ -4,10 +4,12 @@ import "package:flutter_tabler_icons/flutter_tabler_icons.dart";
 
 import "package:inventree/app_colors.dart";
 import "package:inventree/l10.dart";
+import "package:inventree/preferences.dart";
 
 import "package:inventree/inventree/part.dart";
 import "package:inventree/widget/link_icon.dart";
 
+import "package:inventree/widget/part/ai_parts_camera_screen.dart";
 import "package:inventree/widget/part/category_list.dart";
 import "package:inventree/widget/part/part_list.dart";
 import "package:inventree/widget/progress.dart";
@@ -25,6 +27,9 @@ class CategoryDisplayWidget extends StatefulWidget {
 
 class _CategoryDisplayState extends RefreshableState<CategoryDisplayWidget> {
   _CategoryDisplayState();
+
+  bool _aiShowFeatures = false;
+  bool _aiConfigured = false;
 
   @override
   String getAppBarTitle() => L10().partCategory;
@@ -76,7 +81,58 @@ class _CategoryDisplayState extends RefreshableState<CategoryDisplayWidget> {
       );
     }
 
+    if (_aiShowFeatures && InvenTreePart().canCreate) {
+      actions.add(
+        SpeedDialChild(
+          child: Icon(
+            TablerIcons.robot,
+            color: _aiConfigured ? COLOR_ACTION : Colors.grey,
+          ),
+          label: "AI Parts",
+          labelStyle: _aiConfigured ? null : TextStyle(color: Colors.grey),
+          onTap: _aiConfigured
+              ? () {
+                  _launchAIParts();
+                }
+              : () {
+                  showSnackIcon(
+                    "Configure AI API key in settings first",
+                    success: false,
+                  );
+                },
+        ),
+      );
+    }
+
     return actions;
+  }
+
+  Future<void> _launchAIParts() async {
+    // Fetch sub-categories to pass as suggestions to the AI
+    Map<String, int>? subCategories;
+    final parentId = widget.category?.pk;
+    final parentFilter = parentId != null ? parentId.toString() : "null";
+    try {
+      final results = await InvenTreePartCategory().list(
+        filters: {"parent": parentFilter},
+      );
+      if (results.isNotEmpty) {
+        subCategories = {for (final cat in results) cat.name: cat.pk};
+      }
+    } catch (_) {}
+
+    if (!mounted) return;
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => AIPartsCameraScreen(
+          categoryId: parentId,
+          categoryName: widget.category?.name,
+          subCategories: subCategories,
+        ),
+      ),
+    );
   }
 
   void _editCategoryDialog(BuildContext context) {
@@ -104,6 +160,14 @@ class _CategoryDisplayState extends RefreshableState<CategoryDisplayWidget> {
 
   @override
   Future<void> request(BuildContext context) async {
+    _aiShowFeatures = await InvenTreeSettingsManager().getBool(
+      INV_AI_SHOW_FEATURES,
+      true,
+    );
+    final String _aiApiKey =
+        await InvenTreeSettingsManager().getValue(INV_AI_API_KEY, "") as String;
+    _aiConfigured = _aiApiKey.isNotEmpty;
+
     // Update the category
     if (widget.category != null) {
       final bool result = await widget.category?.reload() ?? false;
